@@ -7,46 +7,13 @@ https://thispointer.com/c-11-multithreading-part-1-three-different-ways-to-creat
 https://github.com/methylDragon/coding-notes/blob/master/C%2B%2B/07%20C%2B%2B%20-%20Threading%20and%20Concurrency.md#2.1
 
 
-
-Case 1: Never call join() or detach() on std::thread object with no associated executing thread
-
-
-```c++
-std::thread threadObj( (WorkerThread()) );
-threadObj.join();
-threadObj.join(); // It will cause Program to Terminate
-```
+https://github.com/wellenvogel/simple-cpp-threads/blob/master/SimpleThread.h
 
 
-```c++
-std::thread threadObj( (WorkerThread()) );
-threadObj.detach();
-threadObj.detach(); // It will cause Program to Terminate
+### Meta folly::futures
 
-```
+https://github.com/facebook/folly/blob/main/folly/docs/Futures.md
 
-
-Case 2 : Never forget to call either join or detach on a std::thread object with associated executing thread
-```c++
-#include <iostream>
-#include <thread>
-#include <algorithm>
-class WorkerThread
-{
-public:
-    void operator()()     
-    {
-        std::cout<<"Worker Thread "<<std::endl;
-    }
-};
-int main()  
-{
-    std::thread threadObj( (WorkerThread()) );
-    // Program will terminate as we have't called either join or detach with the std::thread object.
-    // Hence std::thread's object destructor will terminate the program
-    return 0;
-}
-```
 
 
 

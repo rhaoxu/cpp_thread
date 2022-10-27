@@ -5,6 +5,7 @@ using namespace std;
 // https://thispointer.com//c11-multithreading-part-3-carefully-pass-arguments-to-threads/
 
 /*
+NOTE:
     As arguments are copied to new threads stack so, if you need to pass
     references in common way i.e.
 

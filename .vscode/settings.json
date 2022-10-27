@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.ejs": "html",
+    "*.tcc": "cpp",
+    "deque": "cpp",
+    "vector": "cpp",
+    "condition_variable": "cpp",
+    "future": "cpp"
+  }
+}
